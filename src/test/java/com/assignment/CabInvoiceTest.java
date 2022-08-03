@@ -34,4 +34,27 @@ public class CabInvoiceTest
         double result = cabInvoice.calculateTotalFare(rideArray);
         Assert.assertEquals(165,result,0);
     }
+
+    /*
+    Test Method to Return the Following Parts of Invoice
+    No-of-Rides
+    Total-Fare
+    Average-Fare
+     */
+    @Test
+    public void givenArrayWhenCalculateShouldReturnTotalNumberOfRidesTotalFareAndAverageFarePrice()
+    {
+        InvoiceGenerator invoice = new InvoiceGenerator();
+        double[][] rideArray = {
+                {10,2},
+                {4,6},
+                {1.5,2}
+        };
+        int noOfRides = invoice.getTotalRides(rideArray);
+        double totalFare = invoice.calculateTotalFare(rideArray);
+        double averageFare = invoice.calculateAverageFare(rideArray);
+        Assert.assertEquals(3,noOfRides);
+        Assert.assertEquals(165,totalFare,0);
+        Assert.assertEquals(55,averageFare,0);
+    }
 }

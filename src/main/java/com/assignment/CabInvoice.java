@@ -8,7 +8,7 @@ public class CabInvoice
     public double calculateFare(double distance, double time)
     {
         double totalFare = (distance * 10) + time;
-        if((distance * 10) + time < 5 ) return 5;
+        if(totalFare < 5 ) return 5;
         else return totalFare;
     }
 

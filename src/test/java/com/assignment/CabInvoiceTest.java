@@ -57,4 +57,21 @@ public class CabInvoiceTest
         Assert.assertEquals(165,totalFare,0);
         Assert.assertEquals(55,averageFare,0);
     }
+
+    /*
+    This function returns the invoice of the specific user_id
+     */
+    @Test
+    public void givenUserIdWhenCalculateShouldReturnTotalFare()
+    {
+        double[][] rideArray = {
+                {10,2},
+                {4,6},
+                {0.3,1}
+        };
+        InvoiceService invoiceService = new InvoiceService();
+        int user_id = 3;
+        double totalFare = invoiceService.getInvoice(user_id , rideArray);
+        Assert.assertEquals(5,totalFare,0);
+    }
 }
